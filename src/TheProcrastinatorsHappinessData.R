@@ -30,7 +30,13 @@ SA<- happiness[happiness$COUNTRY %in% SA.names,]
 
 Averagehappiness<-c(mean(NE$HAPPINESS),mean(Afr$HAPPINESS),mean(SE$HAPPINESS),mean(EE$HAPPINESS),mean(WE$HAPPINESS),mean(SEAsia$HAPPINESS),mean(EAsia$HAPPINESS),mean(MiddleEast$HAPPINESS),mean(NAmerica$HAPPINESS),mean(CA$HAPPINESS),mean(SA$HAPPINESS))
 Regions<-c("South Europe","East Europe","North Europe","West Europe","Africa","South East Asia","East Asia","Middle East","North America","Central America","South America" )
-boxplot(SE$HAPPINESS,EE$HAPPINESS,NE$HAPPINESS,WE$HAPPINESS,Afr$HAPPINESS,SEAsia$HAPPINESS,EAsia$HAPPINESS,MiddleEast$HAPPINESS,NAmerica$HAPPINESS,CA$HAPPINESS,SA$HAPPINESS, names = Regions)
 
 
+boxplot(SE$HAPPINESS,EE$HAPPINESS,NE$HAPPINESS,WE$HAPPINESS,Afr$HAPPINESS,SEAsia$HAPPINESS,EAsia$HAPPINESS,MiddleEast$HAPPINESS,NAmerica$HAPPINESS,CA$HAPPINESS,SA$HAPPINESS, names = Regions,xlab = "Region",ylab = "happiness factor", main = "Happiness by region")
 
+barplot(Averagehappiness, names = Regions, xlab= "Regions", ylab = "Average Happiness Factor", main = "Average Happiness by region")
+
+
+barplot(Immigrant,names = Regions, xlab = "Region", ylab = "# of Immigrants", main = "Immigrants per region")
+
+plot(Immigrant,Averagehappiness, xlab ="# of Immigrants", ylab = "Average Happiness", main = "Immigration vs Average Happiness")
